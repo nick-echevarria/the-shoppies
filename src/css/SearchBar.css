@@ -1,4 +1,9 @@
 #main-search-bar {  
     width: 50vw;
-    margin: 50px; 
+    margin: 50px;
+}
+
+#search-button { 
+    width: 15vw; 
+    background-color: yellow; 
 }
