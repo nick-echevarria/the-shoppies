@@ -1,14 +1,18 @@
 import React from 'react';
 import '../css/SearchResults.css'
 
-//has to take fetched data and create a list w/buttons
-
 const SearchResults = (props) => {
-    let { searchResults } = props; 
     return (
-        <div> 
+        <div className="search-result-container"> 
+            <h2>Search Results</h2>
             <ul>
-
+                {props.searchResults && props.searchResults.map((searchResultObj) => ( 
+                    <li key={searchResultObj.imdbID}>
+                        {searchResultObj.Title}
+                        ({searchResultObj.Year})                        
+                        <button onClick={() => props.nominate(searchResultObj.Title, searchResultObj.Year, searchResultObj.imdbID)}> Nominate </button>
+                    </li> 
+                ))}
             </ul>
         </div>
     );

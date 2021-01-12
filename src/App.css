@@ -1,11 +1,16 @@
+* { 
+    border: red 1px dotted; 
+}
+
+li { 
+    list-style-type: none;
+}
+
 .app-container { 
     height: 100vh; 
     width: 100vw;
     max-width: 100vw;
     max-height: 100vh;
-    display: flex; 
-    flex-direction: column;  
-    align-items: center; 
 }
 
 .header-container { 
@@ -13,9 +18,18 @@
     min-height: 15vh;
 }
 
-.app-header { 
-    width: 100vw; 
+.header { 
+    width: auto; 
     height: 15vh; 
     background-color: black; 
+}
+
+.search-bar-container { 
+    display: flex; 
+    justify-content: center; 
+}
+
+.result-nod-container { 
+    display: flex;    
 }
 
