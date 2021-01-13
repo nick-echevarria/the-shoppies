@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/NominationList.css'
 
 const NominationList = (props) => {
-    let { nominationList } = props; 
+    let { nominationList, removeNomination } = props; 
     return (
         <div className="nomination-list-container"> 
             <h2>Nominations</h2>
@@ -11,7 +11,7 @@ const NominationList = (props) => {
                     <li key={nomination.imdbID}>
                         {nomination.Title}
                         ({nomination.Year})                        
-                        <button onClick={() => props.removeNomination(nomination)}> Remove </button>
+                        <button onClick={() => removeNomination(nomination)}> Remove </button>
                     </li> 
                 ))}
             </ul>

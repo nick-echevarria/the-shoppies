@@ -18,7 +18,7 @@ const SearchResults = (props) => {
                     <li key={result.imdbID}>
                         {result.Title}
                         ({result.Year})                        
-                        <button disabled={false} onClick={() => props.nominate(result)}> Nominate </button>
+                        <button id={result.imdbID} disabled={false} onClick={() => nominate(result)}> Nominate </button>
                     </li> 
                 ))}
             </ul>
@@ -27,3 +27,6 @@ const SearchResults = (props) => {
 }
 
 export default SearchResults;
+
+//create component for li 
+//

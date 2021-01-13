@@ -3,14 +3,14 @@ import React, { Component } from 'react';
 import SearchBar from './components/SearchBar';
 import SearchResults from './components/SearchResults';
 import NominationList from './components/NominationList';
-import * as requests from './requests.js';
+
+const OMDB_ENDPOINT = "https://www.omdbapi.com/?apikey=fbf45268&s="
 
 class App extends Component {
   state = {
     userInput: "", 
     searchResults: null, 
     nominationList: [], 
-    disabledBtns: []
   }
 
   handleUserInput = (event) => { 
@@ -19,7 +19,7 @@ class App extends Component {
 
   handleSearchSubmit = (event) => { 
     event.preventDefault(); 
-    fetch(requests.OMDB_ENDPOINT + this.state.userInput)      
+    fetch(OMDB_ENDPOINT + this.state.userInput)      
       .then(res => res.json())
       .then(results => this.setState({ searchResults : results["Search"] }))
   }
@@ -30,6 +30,9 @@ class App extends Component {
     let currentNominationList = this.state.nominationList;
 
     currentNominationList.push(newNomination)
+    //disable clicked button
+    let clickedBtn = document.getElementById(`${movie.imdbID}`)
+    clickedBtn.disabled = !clickedBtn.disabled
 
     this.setState({ nominationList: currentNominationList })
   }
@@ -38,6 +41,9 @@ class App extends Component {
     let currentNominationList = this.state.nominationList;
     let newNominationList = currentNominationList.filter(movie => movie.imdbID !== nomination.imdbID )
     
+    let clickedBtn = document.getElementById(`${nomination.imdbID}`)
+    clickedBtn.disabled = !clickedBtn.disabled
+
     this.setState({ nominationList: newNominationList })
   }
 
