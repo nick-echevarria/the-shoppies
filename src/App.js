@@ -52,7 +52,7 @@ class App extends Component {
           />
         </div>
         <div className="result-nod-container">
-          <SearchResults searchResults={this.state.searchResults} nominate={this.nominate}/>
+          <SearchResults searchResults={this.state.searchResults} nominationList={this.state.nominationList} nominate={this.nominate}/>
           <NominationList nominationList={this.state.nominationList} removeNomination={this.removeNomination} />
         </div>
     </div>

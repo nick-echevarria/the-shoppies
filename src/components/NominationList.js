@@ -3,6 +3,7 @@ import '../css/NominationList.css'
 
 const NominationList = (props) => {
     // let { nominationList } = props.nominationList; 
+    
     return (
         <div className="nomination-list-container"> 
             <h2>Nominations</h2>
