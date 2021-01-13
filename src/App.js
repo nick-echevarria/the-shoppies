@@ -7,11 +7,7 @@ import NominationList from './components/NominationList';
 const OMDB_ENDPOINT = "https://www.omdbapi.com/?apikey=fbf45268&s="
 
 class App extends Component {
-  state = {
-    userInput: "", 
-    searchResults: null, 
-    nominationList: [], 
-  }
+  state = { userInput: '', searchResults: null, nominationList: [] }
 
   handleUserInput = (event) => { 
     this.setState({ [event.target.name] : event.target.value })
@@ -21,11 +17,11 @@ class App extends Component {
     event.preventDefault(); 
     fetch(OMDB_ENDPOINT + this.state.userInput)      
       .then(res => res.json())
-      .then(results => this.setState({ searchResults : results["Search"] }))
+      .then(results => this.setState({ searchResults : results.Search }))
   }
 
   nominate = (movie) => {
-    //shallow dupe the object to ensure data in searchResults isn't changed + have access to imdbID
+    //shallow duplicate the object to ensure data in searchResults isn't changed + have access to imdbID
     let newNomination = Object.assign({}, movie);
     let currentNominationList = this.state.nominationList;
 
