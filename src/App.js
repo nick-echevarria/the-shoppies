@@ -40,7 +40,7 @@ class App extends Component {
   removeNomination = (nomination) => { 
     let currentNominationList = this.state.nominationList;
     let newNominationList = currentNominationList.filter(movie => movie.imdbID !== nomination.imdbID )
-    
+    //reenable disabled button
     let clickedBtn = document.getElementById(`${nomination.imdbID}`)
     clickedBtn.disabled = !clickedBtn.disabled
 
