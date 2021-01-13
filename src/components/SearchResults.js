@@ -3,7 +3,7 @@ import '../css/SearchResults.css'
 
 const SearchResults = (props) => {
     // eslint-disable-next-line
-    let { searchResults, disabledBtns, nominate } = props; 
+    let { searchResults, nominate } = props; 
     return (
         <div className="search-result-container"> 
             <h2>Search Results</h2>

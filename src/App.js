@@ -15,9 +15,10 @@ class App extends Component {
 
   handleSearchSubmit = (event) => { 
     event.preventDefault(); 
+    console.log('App.js', event)
     fetch(OMDB_ENDPOINT + this.state.userInput)      
       .then(res => res.json())
-      .then(results => this.setState({ searchResults : results.Search }))
+      .then(results => this.setState({ searchResults : results["Search"] }))
   }
 
   nominate = (movie) => {
