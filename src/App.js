@@ -10,6 +10,7 @@ class App extends Component {
     userInput: "", 
     searchResults: null, 
     nominationList: [], 
+    disabledBtns: []
   }
 
   handleUserInput = (event) => { 
@@ -23,17 +24,19 @@ class App extends Component {
       .then(results => this.setState({ searchResults : results["Search"] }))
   }
 
-  nominate = (title, year, imdbID) => {
-    let newNomination = { title, year, imdbID };
+  nominate = (movie) => {
+    //shallow dupe the object to ensure data in searchResults isn't changed + have access to imdbID
+    let newNomination = Object.assign({}, movie);
     let currentNominationList = this.state.nominationList;
+
     currentNominationList.push(newNomination)
-    // if nominationList.includes(nom.clicked?) then disable
+
     this.setState({ nominationList: currentNominationList })
   }
 
-  removeNomination = (title) => { 
+  removeNomination = (nomination) => { 
     let currentNominationList = this.state.nominationList;
-    let newNominationList = currentNominationList.filter(movie => movie.title !== title )
+    let newNominationList = currentNominationList.filter(movie => movie.imdbID !== nomination.imdbID )
     
     this.setState({ nominationList: newNominationList })
   }
@@ -52,7 +55,7 @@ class App extends Component {
           />
         </div>
         <div className="result-nod-container">
-          <SearchResults searchResults={this.state.searchResults} nominationList={this.state.nominationList} nominate={this.nominate}/>
+          <SearchResults searchResults={this.state.searchResults} nominate={this.nominate} disabledBtns={this.state.disabledBtns} />
           <NominationList nominationList={this.state.nominationList} removeNomination={this.removeNomination} />
         </div>
     </div>

@@ -2,17 +2,16 @@ import React from 'react';
 import '../css/NominationList.css'
 
 const NominationList = (props) => {
-    // let { nominationList } = props.nominationList; 
-    
+    let { nominationList } = props; 
     return (
         <div className="nomination-list-container"> 
             <h2>Nominations</h2>
             <ul>
-                {props.nominationList && props.nominationList.map((nominationObj) => ( 
-                    <li key={nominationObj.imdbID}>
-                        {nominationObj.title}
-                        ({nominationObj.year})                        
-                        <button onClick={() => props.removeNomination(nominationObj.title, nominationObj.year, nominationObj.imdbID)}> Remove </button>
+                {nominationList && nominationList.map((nomination) => ( 
+                    <li key={nomination.imdbID}>
+                        {nomination.Title}
+                        ({nomination.Year})                        
+                        <button onClick={() => props.removeNomination(nomination)}> Remove </button>
                     </li> 
                 ))}
             </ul>

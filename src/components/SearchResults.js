@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../css/SearchResults.css'
 
 const SearchResults = (props) => {
     // eslint-disable-next-line
-    const [disabledBtns, setDisabledBtns] = useState([]);
-    
-    props.searchResults && props.searchResults.forEach(movie => {
-        //take the movie's ID + compare to all movies in disabledBtns
-        //if movie is in nomination list, disable buttion
-    })
-    
+    let { searchResults, disabledBtns, nominate } = props; 
+    // props.searchResults && props.searchResults.forEach(movie => { 
+    //     // if (props.disabledBtns.includes(movie.imdbID)) {
+    //     //     console.log("Bingo", movie)
+    //     // }    
+    //     console.log
+    // })
     return (
         <div className="search-result-container"> 
             <h2>Search Results</h2>
             <ul>
-                {props.searchResults && props.searchResults.map((searchResultObj) => ( 
-                    <li key={searchResultObj.imdbID}>
-                        {searchResultObj.Title}
-                        ({searchResultObj.Year})                        
-                        <button disabled={false} onClick={() => props.nominate(searchResultObj.Title, searchResultObj.Year, searchResultObj.imdbID)}> Nominate </button>
+                {searchResults && searchResults.map((result) => ( 
+                    <li key={result.imdbID}>
+                        {result.Title}
+                        ({result.Year})                        
+                        <button disabled={false} onClick={() => props.nominate(result)}> Nominate </button>
                     </li> 
                 ))}
             </ul>
