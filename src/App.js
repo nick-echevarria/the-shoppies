@@ -4,22 +4,27 @@ import SearchBar from './components/SearchBar';
 import SearchResults from './components/SearchResults';
 import NominationList from './components/NominationList';
 
-const OMDB_ENDPOINT = "https://www.omdbapi.com/?apikey=fbf45268&s="
+const OMDB_URL = "https://www.omdbapi.com"
+const API_KEY = 'fbf45268'
 
 class App extends Component {
-  state = { userInput: '', searchResults: null, nominationList: [] }
+  state = {
+    query: '', 
+    searchResults: null,
+    nominationList: []
+  }
 
-  handleUserInput = (event) => { 
+  handleQuery = (event) => { 
     this.setState({ [event.target.name] : event.target.value })
   }
 
-  handleSearchSubmit = (event) => { 
-    event.preventDefault(); 
-    console.log('App.js', event)
-    fetch(OMDB_ENDPOINT + this.state.userInput)      
+  fetchMovies = (event) => { 
+    fetch(`${OMDB_URL}/?apikey=${API_KEY}&s=${event.target.value}`)      
       .then(res => res.json())
       .then(results => this.setState({ searchResults : results["Search"] }))
   }
+
+  // this.setState({ searchResults : results["Search"] })
 
   nominate = (movie) => {
     //shallow duplicate the object to ensure data in searchResults isn't changed + have access to imdbID
@@ -52,9 +57,9 @@ class App extends Component {
         </div>
         <div className="search-bar-container">
           <SearchBar
-            userInput={this.state.userInput}
-            handleUserInput={this.handleUserInput}
-            handleSearchSubmit={this.handleSearchSubmit}
+            query={this.state.query}
+            handleQuery={this.handleQuery}
+            fetchMovies={this.fetchMovies}
           />
         </div>
         <div className="result-nod-container">
@@ -67,3 +72,8 @@ class App extends Component {
 }
 
 export default App;
+
+//make header component
+//mimic johnson's app render/return + have that guide you to the next steps
+//change visual style to be splashier 
+//implement bootstrap or something like it 

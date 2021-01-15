@@ -2,17 +2,17 @@ import React from 'react';
 import '../css/SearchBar.css'
 
 const SearchBar = (props) => {
-    let { userInput, handleUserInput, handleSearchSubmit } = props; 
+    let { query, handleQuery, fetchMovies } = props; 
 
     return (
         <div className="search-bar-container">
-            <form onSubmit={ handleSearchSubmit } >
+            <form>
                 <input
                     type="text"
-                    name="userInput"
+                    name="query"
                     id="main-search-bar"
-                    value={ userInput }
-                    onChange={ handleUserInput }
+                    value={query}
+                    onChange={(e) => { handleQuery(e); fetchMovies(e)}}
                     placeholder="Type your movie search here"
                 />
                 <input id="search-button" type="submit" value="Search"/>
