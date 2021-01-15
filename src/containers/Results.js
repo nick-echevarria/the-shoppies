@@ -1,4 +1,5 @@
 import React from 'react';
+import Result from '../presentational/Result'
 import '../css/Results.css'
 
 const Results = (props) => {
@@ -6,15 +7,7 @@ const Results = (props) => {
     return (
         <div className="results-container"> 
             <h2>Search Results</h2>
-            <ul>
-                {results.map((result) => ( 
-                    <li key={result.imdbID}>
-                        {result.Title}
-                        ({result.Year})                        
-                        <button id={result.imdbID} disabled={false} onClick={() => nominate(result)}> Nominate </button>
-                    </li> 
-                ))}
-            </ul>
+            <Result results={results} nominate={nominate}/>
         </div>
     );
 }

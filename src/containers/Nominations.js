@@ -1,4 +1,5 @@
 import React from 'react';
+import Nomination from '../presentational/Nomination'
 import '../css/Nominations.css'
 
 const Nominations = (props) => {
@@ -6,15 +7,7 @@ const Nominations = (props) => {
     return (
         <div className="nominations-container"> 
             <h2>Nominations</h2>
-            <ul>
-                {nominations.map((nomination) => ( 
-                    <li key={nomination.imdbID}>
-                        {nomination.Title}
-                        ({nomination.Year})                        
-                        <button onClick={() => removeNomination(nomination)}> Remove </button>
-                    </li> 
-                ))}
-            </ul>
+            <Nomination nominations={nominations} removeNomination={removeNomination}/>
         </div>
     );
 }

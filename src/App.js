@@ -1,9 +1,7 @@
 import './App.css';
 import React, { Component } from 'react';
-import Search from './containers/Search';
-import Results from './containers/Results';
-import Nominations from './containers/Nominations';
 import Header from './presentational/Header'
+import Search from './containers/Search';
 import Body from './presentational/Body'
 
 const OMDB_URL = "https://www.omdbapi.com"
@@ -41,10 +39,11 @@ class App extends Component {
 
   removeNomination = (nomination) => { 
     let currentNominations = this.state.nominations;
+    // eslint-disable-next-line
     let newNominations = currentNominations.filter(nomination => nomination.imdbID !== nomination.imdbID )
     //reenable disabled button
     let clickedBtn = document.getElementById(`${nomination.imdbID}`)
-    clickedBtn.disabled = !clickedBtn.disabled
+    if (clickedBtn) clickedBtn.disabled = !clickedBtn.disabled
 
     this.setState({ nominations: newNominations })
   }
