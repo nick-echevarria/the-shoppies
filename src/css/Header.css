@@ -1,10 +1,22 @@
-.header-container { 
-    min-width: 100vw; 
-    min-height: 15vh;
+.header-container {  
+    width: 100vw; 
+    height: 10vh; 
+    background-color: rgba(199, 159, 39);
+    /* background: linear-gradient(80deg, rgba(199, 159, 39) 0%, rgba(255, 255, 255) 170%);     */
 }
 
 .header { 
-    width: auto; 
-    height: 15vh; 
-    background-color: black; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: inherit; 
+    height: inherit;   
+}
+
+.title { 
+    color: white;
+}
+
+img { 
+    height: 10vh; 
 }

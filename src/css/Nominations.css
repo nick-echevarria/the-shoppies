@@ -1,4 +1,6 @@
 .nominations-container { 
     width: 50vw; 
     text-align: center;
+    background-color: rgb(199, 159, 39);; 
+    color: white; 
 }
