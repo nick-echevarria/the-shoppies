@@ -1,8 +1,10 @@
 import './App.css';
 import React, { Component } from 'react';
-import SearchBar from './components/SearchBar';
-import SearchResults from './components/SearchResults';
-import NominationList from './components/NominationList';
+import Search from './containers/Search';
+import Results from './containers/Results';
+import Nominations from './containers/Nominations';
+import Header from './presentational/Header'
+import Body from './presentational/Body'
 
 const OMDB_URL = "https://www.omdbapi.com"
 const API_KEY = 'fbf45268'
@@ -10,8 +12,8 @@ const API_KEY = 'fbf45268'
 class App extends Component {
   state = {
     query: '', 
-    searchResults: null,
-    nominationList: []
+    results: [],
+    nominations: []
   }
 
   handleQuery = (event) => { 
@@ -21,51 +23,47 @@ class App extends Component {
   fetchMovies = (event) => { 
     fetch(`${OMDB_URL}/?apikey=${API_KEY}&s=${event.target.value}`)      
       .then(res => res.json())
-      .then(results => this.setState({ searchResults : results["Search"] }))
+      .then(data => this.setState({ results : data["Search"] }))
   }
 
-  // this.setState({ searchResults : results["Search"] })
-
   nominate = (movie) => {
-    //shallow duplicate the object to ensure data in searchResults isn't changed + have access to imdbID
+    //shallow duplicate the object to ensure data in results isn't changed + have access to imdbID
     let newNomination = Object.assign({}, movie);
-    let currentNominationList = this.state.nominationList;
+    let currentNominations = this.state.nominations;
 
-    currentNominationList.push(newNomination)
+    currentNominations.push(newNomination)
     //disable clicked button
     let clickedBtn = document.getElementById(`${movie.imdbID}`)
     clickedBtn.disabled = !clickedBtn.disabled
 
-    this.setState({ nominationList: currentNominationList })
+    this.setState({ nominations: currentNominations })
   }
 
   removeNomination = (nomination) => { 
-    let currentNominationList = this.state.nominationList;
-    let newNominationList = currentNominationList.filter(movie => movie.imdbID !== nomination.imdbID )
+    let currentNominations = this.state.nominations;
+    let newNominations = currentNominations.filter(nomination => nomination.imdbID !== nomination.imdbID )
     //reenable disabled button
     let clickedBtn = document.getElementById(`${nomination.imdbID}`)
     clickedBtn.disabled = !clickedBtn.disabled
 
-    this.setState({ nominationList: newNominationList })
+    this.setState({ nominations: newNominations })
   }
 
   render() {
     return (
       <div className="app-container">
-        <div className="header-container"> 
-          <header className="header" />
-        </div>
-        <div className="search-bar-container">
-          <SearchBar
-            query={this.state.query}
-            handleQuery={this.handleQuery}
-            fetchMovies={this.fetchMovies}
-          />
-        </div>
-        <div className="result-nod-container">
-          <SearchResults searchResults={this.state.searchResults} nominate={this.nominate} disabledBtns={this.state.disabledBtns} />
-          <NominationList nominationList={this.state.nominationList} removeNomination={this.removeNomination} />
-        </div>
+        <Header/>
+        <Search
+          query={this.state.query}
+          handleQuery={this.handleQuery}
+          fetchMovies={this.fetchMovies}
+        />
+        <Body
+          results={this.state.results}
+          nominate={this.nominate}
+          nominations={this.state.nominations}
+          removeNomination={this.removeNomination}
+        />
     </div>
     );
   }

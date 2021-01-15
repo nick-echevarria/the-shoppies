@@ -1,14 +1,13 @@
 import React from 'react';
-import '../css/SearchResults.css'
+import '../css/Results.css'
 
-const SearchResults = (props) => {
-    // eslint-disable-next-line
-    let { searchResults, nominate } = props; 
+const Results = (props) => {
+    let { results, nominate } = props; 
     return (
-        <div className="search-result-container"> 
+        <div className="results-container"> 
             <h2>Search Results</h2>
             <ul>
-                {searchResults && searchResults.map((result) => ( 
+                {results.map((result) => ( 
                     <li key={result.imdbID}>
                         {result.Title}
                         ({result.Year})                        
@@ -20,4 +19,4 @@ const SearchResults = (props) => {
     );
 }
 
-export default SearchResults;
+export default Results;

@@ -1,5 +1,8 @@
 * { 
-    border: red 1px dotted; 
+    border: red 1px solid; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 li { 
@@ -7,29 +10,13 @@ li {
 }
 
 .app-container { 
-    height: 100vh; 
-    width: 100vw;
     max-width: 100vw;
     max-height: 100vh;
-}
-
-.header-container { 
-    min-width: 100vw; 
-    min-height: 15vh;
-}
-
-.header { 
-    width: auto; 
-    height: 15vh; 
-    background-color: black; 
-}
-
-.search-bar-container { 
     display: flex; 
-    justify-content: center; 
+    flex-direction: column; 
 }
 
-.result-nod-container { 
+/* .result-nod-container { 
     display: flex;    
-}
+} */
 

@@ -10,12 +10,11 @@ const SearchBar = (props) => {
                 <input
                     type="text"
                     name="query"
-                    id="main-search-bar"
+                    id="search-bar"
                     value={query}
                     onChange={(e) => { handleQuery(e); fetchMovies(e)}}
                     placeholder="Type your movie search here"
                 />
-                <input id="search-button" type="submit" value="Search"/>
             </form>
         </div>
     );

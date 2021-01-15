@@ -1,0 +1,10 @@
+.header-container { 
+    min-width: 100vw; 
+    min-height: 15vh;
+}
+
+.header { 
+    width: auto; 
+    height: 15vh; 
+    background-color: black; 
+}

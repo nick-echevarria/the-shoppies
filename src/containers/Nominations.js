@@ -1,13 +1,13 @@
 import React from 'react';
-import '../css/NominationList.css'
+import '../css/Nominations.css'
 
-const NominationList = (props) => {
-    let { nominationList, removeNomination } = props; 
+const Nominations = (props) => {
+    let { nominations, removeNomination } = props; 
     return (
-        <div className="nomination-list-container"> 
+        <div className="nominations-container"> 
             <h2>Nominations</h2>
             <ul>
-                {nominationList && nominationList.map((nomination) => ( 
+                {nominations.map((nomination) => ( 
                     <li key={nomination.imdbID}>
                         {nomination.Title}
                         ({nomination.Year})                        
@@ -19,4 +19,4 @@ const NominationList = (props) => {
     );
 }
 
-export default NominationList;
+export default Nominations;
