@@ -1,0 +1,6 @@
+.nomination { 
+    color: black; 
+    background-color: white;
+    border: 1px black solid;
+    z-index: 1; 
+}

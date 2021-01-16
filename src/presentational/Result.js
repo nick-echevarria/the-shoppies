@@ -1,11 +1,12 @@
 import React from 'react';
+import '../css/Result.css'
 
 const Result = (props) => {
     let { results, nominate } = props; 
     return (
         <ul>
             {results && results.map((result) => ( 
-                <li key={result.imdbID}>
+                <li className="result" key={result.imdbID}>
                     {result.Title}
                     ({result.Year})                        
                     <button id={result.imdbID} disabled={false} onClick={() => nominate(result)}> Nominate </button>

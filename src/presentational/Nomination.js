@@ -1,11 +1,12 @@
 import React from 'react';
+import '../css/Nomination.css'
 
 const Nomination = (props) => {
     let { nominations, removeNomination } = props; 
     return (
         <ul>
             {nominations.map((nomination) => ( 
-                <li key={nomination.imdbID}>
+                <li className="nomination" key={nomination.imdbID}>
                     {nomination.Title}
                     ({nomination.Year})                        
                     <button onClick={() => removeNomination(nomination)}> Remove </button>

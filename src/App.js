@@ -29,7 +29,7 @@ class App extends Component {
     let newNomination = Object.assign({}, movie);
     let currentNominations = this.state.nominations;
 
-    currentNominations.push(newNomination)
+    currentNominations.push(newNomination);
     //disable clicked button
     let clickedBtn = document.getElementById(`${movie.imdbID}`)
     clickedBtn.disabled = !clickedBtn.disabled
@@ -40,7 +40,8 @@ class App extends Component {
   removeNomination = (nomination) => { 
     let currentNominations = this.state.nominations;
     // eslint-disable-next-line
-    let newNominations = currentNominations.filter(nomination => nomination.imdbID !== nomination.imdbID )
+    let newNominations = currentNominations.filter(prevNomination => prevNomination.imdbID !== nomination.imdbID)
+    console.log(newNominations)
     //reenable disabled button
     let clickedBtn = document.getElementById(`${nomination.imdbID}`)
     if (clickedBtn) clickedBtn.disabled = !clickedBtn.disabled
@@ -69,8 +70,3 @@ class App extends Component {
 }
 
 export default App;
-
-//make header component
-//mimic johnson's app render/return + have that guide you to the next steps
-//change visual style to be splashier 
-//implement bootstrap or something like it 

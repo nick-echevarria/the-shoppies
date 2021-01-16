@@ -1,7 +1,5 @@
 import React from 'react';
 import '../css/Header.css'
-import wreath from '../images/wreath.png'
-
 
 const Header = () => {
     return (
