@@ -1,8 +1,7 @@
 .header-container {  
     width: 100vw; 
-    height: 10vh; 
-    background-color: rgba(199, 159, 39);
-    /* background: linear-gradient(80deg, rgba(199, 159, 39) 0%, rgba(255, 255, 255) 170%);     */
+    height: 10vh;  
+    background: linear-gradient(240deg, rgba(199, 159, 39) 0%, rgba(255, 255, 255) 270%);   
 }
 
 .header { 
@@ -10,13 +9,15 @@
     align-items: center;
     justify-content: center;
     width: inherit; 
-    height: inherit;   
+    height: inherit; 
 }
 
 .title { 
-    color: white;
+    color: white;  
+    -webkit-text-stroke: 1px black;                                                                                                                                              
 }
 
-img { 
-    height: 10vh; 
+.title { 
+    font-size: 5vh;
 }
+

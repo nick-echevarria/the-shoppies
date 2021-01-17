@@ -13,8 +13,8 @@ const SearchBar = (props) => {
                     id="search-bar"
                     value={query}
                     onChange={(e) => { handleQuery(e); fetchMovies(e)}}
-                    placeholder="Type your movie search here"
-                    autocomplete="off"
+                    placeholder="Search for a movie by title"
+                    autoComplete="off"
                 />
             </form>
         </div>

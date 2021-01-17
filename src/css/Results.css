@@ -1,8 +1,8 @@
 .results-container { 
-    width: 50vw; 
-    text-align: center;
-    border: 1rem; 
-    background-color: rgb(199, 159, 39);
-    color: white; 
+    height: inherit; 
+    width: 60vw;  
+    color: black; 
+    -webkit-text-stroke: .5px black;    
+    font-size: 2vh;    
+    overflow: scroll                                                                                                                                  
 }
-

@@ -1,5 +1,38 @@
 .result { 
+    height: 20vh; 
+    width: inherit; 
     color: black;
     background-color: white;
-    border: 1px black solid;
+    border-top: 1vh black solid;
+    border-right: 1vh black solid;
+    border-left: 1vh black solid;
+    display: flex; 
+    flex-direction: row; 
+}
+
+.movie-info { 
+    width: 70vw; 
+    height: inherit;
+}
+
+.movie-button-container { 
+    height: inherit; 
+    width: 30vw; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.movie-button { 
+    height: 16vh; 
+    width: 12vw; 
+    background-position: center; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+.movie-button:hover { 
+    transform: scale(1.1);  
+    box-shadow: 5vh #888888;
 }

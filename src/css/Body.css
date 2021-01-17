@@ -1,3 +1,6 @@
-.result-nom-container { 
-    display: flex;    
+.body-container { 
+    height: 60vh; 
+    width: 100vw; 
+    display: flex; 
+    flex-direction: row; 
 }

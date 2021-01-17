@@ -11,6 +11,13 @@
     -o-transition: all 0.30s ease-in-out;
 }
 
+#search-bar:hover { 
+    box-shadow: 0 0 25px rgb(199, 159, 39);
+    padding: 1vh;
+    margin: 5vh;
+    border: 1px solid rgb(199, 159, 39);
+}
+
 #search-bar:focus { 
     box-shadow: 0 0 25px rgb(199, 159, 39);
     padding: 1vh;

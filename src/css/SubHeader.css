@@ -1,0 +1,17 @@
+.subheader-container { 
+    display: flex;   
+    height: 8vh; 
+    align-items: center; 
+    background-color: rgba(199, 159, 39);  
+    color: white;   
+}
+
+.search-results-title {  
+    width: 60vw;  
+    padding: 5vh;     
+}
+
+.nominations-title { 
+    width: 40vw; 
+    padding: 5vh;
+}

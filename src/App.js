@@ -2,7 +2,9 @@ import './App.css';
 import React, { Component } from 'react';
 import Header from './presentational/Header'
 import Search from './containers/Search';
-import Body from './presentational/Body'
+import SubHeader from './presentational/SubHeader';
+import Body from './presentational/Body';
+
 
 const OMDB_URL = "https://www.omdbapi.com"
 const API_KEY = 'fbf45268'
@@ -58,12 +60,14 @@ class App extends Component {
           handleQuery={this.handleQuery}
           fetchMovies={this.fetchMovies}
         />
+        <SubHeader />
         <Body
-          results={this.state.results}
-          nominate={this.nominate}
+          results={this.state.results}          
           nominations={this.state.nominations}
+          nominate={this.nominate}
           removeNomination={this.removeNomination}
         />
+        {/* <Footer /> */}
     </div>
     );
   }

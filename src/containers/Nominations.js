@@ -5,8 +5,7 @@ import '../css/Nominations.css'
 const Nominations = (props) => {
     let { nominations, removeNomination } = props; 
     return (
-        <div className="nominations-container"> 
-            <h2>Nominations</h2>
+        <div className="nominations-container">             
             <Nomination nominations={nominations} removeNomination={removeNomination}/>
         </div>
     );
