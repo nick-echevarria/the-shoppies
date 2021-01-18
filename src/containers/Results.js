@@ -3,10 +3,10 @@ import Result from '../presentational/Result'
 import '../css/Results.css'
 
 const Results = (props) => {
-    let { results, nominate, nominations } = props; 
+    let { results, nominate } = props; 
     return (
         <div className="results-container"> 
-            <Result results={results} nominate={nominate} nominations={nominations}/>
+            <Result results={results} nominate={nominate} />
         </div>
     );
 }

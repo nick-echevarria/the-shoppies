@@ -2,12 +2,11 @@ import React from 'react';
 import '../css/Result.css'
 
 const Result = (props) => {
-    let { results, nominate, nominations } = props; 
+    let { results, nominate } = props; 
 
     return (   
         <ul>
             {results && results.map((result) => ( 
-
                 <li className="result" key={result.imdbID}>
                     <div className="movie-info">
                         <div className="result-title">{result.Title}</div><br/>

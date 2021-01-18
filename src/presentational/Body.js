@@ -12,7 +12,7 @@ const Body = (props) => {
     } = props;
     return (
         <div className='body-container'>
-            <Results results={results} nominate={nominate} />
+            <Results results={results} nominate={nominate}/>
             <Nominations nominations={nominations} removeNomination={removeNomination} />
         </div>
     );

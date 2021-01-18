@@ -22,7 +22,7 @@ class App extends Component {
   }
 
   fetchMovies = (event) => { 
-    fetch(`${OMDB_URL}/?apikey=${API_KEY}&s=${event.target.value}&plot=full`)      
+    fetch(`${OMDB_URL}/?apikey=${API_KEY}&s=${event.target.value}`)      
       .then(res => res.json())
       .then(data => this.setState({ results : data["Search"] }))
   }
