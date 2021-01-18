@@ -4,10 +4,11 @@
     align-items: center; 
     background: linear-gradient(240deg, rgba(199, 159, 39) 0%, rgba(255, 255, 255) 270%);   
     font-weight: 400; 
-    font-size: 2.5vh; 
+    font-size: 3vh; 
     height: 7vh; 
     width: 100vw; 
     color: white; 
     -webkit-text-stroke: .04vh black; 
     flex-direction: column; 
+    border: 1vh black solid; 
 }

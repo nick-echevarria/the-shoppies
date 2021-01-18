@@ -6,7 +6,7 @@ const Nomination = (props) => {
     return (
         <ul>
             {nominations.map((nomination) => ( 
-                <li className="nomination" key={nomination.imdbID}>
+                <li className={nominations.length === 5 ? "nomination-full" : "nomination"} key={nomination.imdbID}>
                     <div className="nomination-title">
                         {nomination.Title}
                     </div>                  

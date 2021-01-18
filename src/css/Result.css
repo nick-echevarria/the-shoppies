@@ -50,10 +50,15 @@
     position: absolute;
     top: 1vh;
     right: 2vh; 
+    cursor: pointer; 
 }
 
 .movie-button:hover { 
     transform: scale(1.05);  
     box-shadow: 0 0 2vh rgb(199, 159, 39);
     border: 1px solid rgb(199, 159, 39);
+}
+
+.movie-button:active { 
+    transform: scale(.9);  
 }

@@ -1,10 +1,12 @@
+import { queryByTestId } from '@testing-library/react';
 import React from 'react';
 import '../css/SubHeader.css'
 
-const SubHeader = () => {
+const SubHeader = (props) => {
+    let { query } = props; 
     return (
         <div className="subheader-container">
-            <h2 className="search-results-title">Search Results</h2>
+            {query.length === 0 ? <h2 className="search-results-title">Search Results</h2> : <h2 className="search-results-title">Search Results for {query}</h2>}
             <h2 className="nominations-title">Nominations</h2>
         </div>
     );

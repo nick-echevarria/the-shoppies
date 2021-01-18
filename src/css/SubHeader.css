@@ -4,7 +4,9 @@
     align-items: center; 
     background: linear-gradient(240deg, rgba(199, 159, 39) 0%, rgba(255, 255, 255) 270%);     
     color: white;   
-    -webkit-text-stroke: .07vh black;                                                                                                                                              
+    -webkit-text-stroke: .07vh black;      
+    font-size: 2.5vh;        
+    border: .5vh black solid;                                                                                                                                  
 }
 
 .search-results-title {  

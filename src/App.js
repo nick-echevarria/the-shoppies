@@ -24,7 +24,7 @@ class App extends Component {
   fetchMovies = (event) => { 
     fetch(`${OMDB_URL}/?apikey=${API_KEY}&s=${event.target.value}&plot=full`)      
       .then(res => res.json())
-      .then(data => this.setState({ results : data["Search"] }))
+      .then(data => console.log(data))
   }
 
   nominate = (movie) => {
@@ -61,7 +61,7 @@ class App extends Component {
           handleQuery={this.handleQuery}
           fetchMovies={this.fetchMovies}
         />
-        <SubHeader />
+        <SubHeader query={this.state.query}/>
         <Body
           results={this.state.results}          
           nominations={this.state.nominations}
