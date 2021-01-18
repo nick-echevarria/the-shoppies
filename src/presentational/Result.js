@@ -15,7 +15,7 @@ const Result = (props) => {
                     <div className="movie-button-container">
                         <button
                             className="movie-button"
-                            style={{ backgroundImage: "url(" + `${result.Poster}` + ")" }}
+                            style={{ backgroundImage: `url(${result.Poster})` }}
                             id={result.imdbID}
                             disabled={false}
                             onClick={() => nominate(result)} />

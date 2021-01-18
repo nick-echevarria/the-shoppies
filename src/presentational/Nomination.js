@@ -13,7 +13,7 @@ const Nomination = (props) => {
                     <div className="remove-nomination-container">
                         <button
                             className="remove-nomination-button"
-                            style={{ backgroundImage: "url(" + `${nomination.Poster}` + ")" }}
+                            style={{ backgroundImage: `url(${nomination.Poster})` }}
                             onClick={() => removeNomination(nomination)}>
                         </button>
                     </div>
