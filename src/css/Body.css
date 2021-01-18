@@ -4,3 +4,36 @@
     display: flex; 
     flex-direction: row; 
 }
+
+.waiting-container { 
+    height: inherit; 
+    width: 60vw; 
+    font-size: 2vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    color: lightgrey; 
+    
+}
+
+.waiting-container:after {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+    -webkit-animation: ellipsis steps(4,end) 900ms infinite;      
+    animation: ellipsis steps(4,end) 900ms infinite;
+    content: "\2026"; /* ascii code for the ellipsis character */
+    width: 0px;
+}
+
+@keyframes ellipsis {
+    to {
+        width: 2vh;    
+    }
+}
+
+@-webkit-keyframes ellipsis {
+    to {
+        width: 2vh;    
+    }
+}

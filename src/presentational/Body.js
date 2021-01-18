@@ -9,11 +9,11 @@ const Body = (props) => {
         nominations,
         nominate,
         removeNomination
-    } = props; 
+    } = props;
     return (
         <div className='body-container'>
-            <Results results={results} nominate={nominate}/>
-            <Nominations nominations={nominations} removeNomination={removeNomination}/>
+            <Results results={results} nominate={nominate} />
+            <Nominations nominations={nominations} removeNomination={removeNomination} />
         </div>
     );
 }

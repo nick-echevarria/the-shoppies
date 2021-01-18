@@ -24,7 +24,7 @@ class App extends Component {
   fetchMovies = (event) => { 
     fetch(`${OMDB_URL}/?apikey=${API_KEY}&s=${event.target.value}&plot=full`)      
       .then(res => res.json())
-      .then(data => console.log(data))
+      .then(data => this.setState({ results : data["Search"] }))
   }
 
   nominate = (movie) => {

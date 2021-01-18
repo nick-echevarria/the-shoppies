@@ -3,5 +3,5 @@
     width: 60vw;  
     color: black;  
     font-size: 2vh;    
-    overflow: scroll;                                                                                                                         
+    overflow-y: scroll;                                                                                                                         
 }
