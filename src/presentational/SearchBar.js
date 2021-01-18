@@ -6,7 +6,6 @@ const SearchBar = (props) => {
 
     return (
         <div className="search-bar-container">
-            <form>
                 <input
                     type="text"
                     name="query"
@@ -16,7 +15,6 @@ const SearchBar = (props) => {
                     placeholder="Search for a movie by title"
                     autoComplete="off"
                 />
-            </form>
         </div>
     );
 }
