@@ -17,12 +17,14 @@ class App extends Component {
     nominations: []
   }
 
-  handleQuery = (event) => { 
+  handleQuery = (event) => {
+    event.preventDefault();
     this.setState({ [event.target.name] : event.target.value })
   }
 
-  fetchMovies = async (event) => { 
-    await fetch(`${OMDB_URL}/?apikey=${API_KEY}&s=${event.target.value}`)      
+  fetchMovies = (event) => { 
+    event.preventDefault(); 
+    fetch(`${OMDB_URL}/?apikey=${API_KEY}&s=${event.target.value}`)      
       .then(res => res.json())
       .then(data => {
         console.log(data)
