@@ -4,7 +4,7 @@ import '../css/Footer.css'
 const Footer = () => {
     return (
         <div className="footer-container">
-            Created With Love By The Jefferson Creative
+            Made With Love By The Jefferson Creative
         </div>
     );
 }

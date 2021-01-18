@@ -62,3 +62,16 @@
 .movie-button:active { 
     transform: scale(.9);  
 }
+
+.movie-button:disabled { 
+    height: 100%; 
+    width: 100%; 
+    background-position: center; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 1vh;
+    right: 2vh; 
+    cursor: pointer; 
+    filter: saturate(0);
+}

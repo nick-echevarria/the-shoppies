@@ -28,6 +28,7 @@ class App extends Component {
   }
 
   nominate = (movie) => {
+    if (this.state.nominations.length === 5) return
     //shallow duplicate the object to ensure data in results isn't changed + have access to imdbID
     let newNomination = Object.assign({}, movie);
     let currentNominations = this.state.nominations;
@@ -52,7 +53,7 @@ class App extends Component {
     this.setState({ nominations: newNominations })
   }
 
-  render() {
+  render() {  
     return (
       <div className="app-container">
         <Header/>
