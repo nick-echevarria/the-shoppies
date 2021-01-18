@@ -1,8 +1,7 @@
 .results-container { 
     height: inherit; 
     width: 60vw;  
-    color: black; 
-    -webkit-text-stroke: .5px black;    
+    color: black;  
     font-size: 2vh;    
-    overflow: scroll                                                                                                                                  
+    overflow: scroll;                                                                                                                         
 }

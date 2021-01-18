@@ -2,8 +2,9 @@
     display: flex;   
     height: 8vh; 
     align-items: center; 
-    background-color: rgba(199, 159, 39);  
+    background: linear-gradient(240deg, rgba(199, 159, 39) 0%, rgba(255, 255, 255) 270%);     
     color: white;   
+    -webkit-text-stroke: .07vh black;                                                                                                                                              
 }
 
 .search-results-title {  

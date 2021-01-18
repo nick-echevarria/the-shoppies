@@ -12,12 +12,9 @@
     height: inherit; 
 }
 
-.title { 
+.header-title { 
     color: white;  
-    -webkit-text-stroke: 1px black;                                                                                                                                              
-}
-
-.title { 
-    font-size: 5vh;
+    -webkit-text-stroke: 1px black;     
+    font-size: 5vh;                                                                                                                                         
 }
 

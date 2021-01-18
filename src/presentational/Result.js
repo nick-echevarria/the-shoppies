@@ -8,12 +8,12 @@ const Result = (props) => {
             {results && results.map((result) => ( 
                 <li className="result" key={result.imdbID}>
                     <div className="movie-info">
-                        {result.Title} ({result.Year})   
+                        <div className="result-title">{result.Title}</div><br/>
+                        <div className="result-year">({result.Year})</div>
                     </div>
                     <div className="movie-button-container">
                         <button className="movie-button" style={{ backgroundImage: "url(" + `${result.Poster}` + ")"}} id={result.imdbID} disabled={false} onClick={() => nominate(result)}/>
                     </div>
-
                 </li> 
             ))}
         </ul>

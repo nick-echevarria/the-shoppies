@@ -4,6 +4,7 @@ import Header from './presentational/Header'
 import Search from './containers/Search';
 import SubHeader from './presentational/SubHeader';
 import Body from './presentational/Body';
+import Footer from './containers/Footer'
 
 
 const OMDB_URL = "https://www.omdbapi.com"
@@ -21,7 +22,7 @@ class App extends Component {
   }
 
   fetchMovies = (event) => { 
-    fetch(`${OMDB_URL}/?apikey=${API_KEY}&s=${event.target.value}`)      
+    fetch(`${OMDB_URL}/?apikey=${API_KEY}&s=${event.target.value}&plot=full`)      
       .then(res => res.json())
       .then(data => this.setState({ results : data["Search"] }))
   }
@@ -67,7 +68,7 @@ class App extends Component {
           nominate={this.nominate}
           removeNomination={this.removeNomination}
         />
-        {/* <Footer /> */}
+        <Footer />
     </div>
     );
   }

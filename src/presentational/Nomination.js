@@ -7,9 +7,16 @@ const Nomination = (props) => {
         <ul>
             {nominations.map((nomination) => ( 
                 <li className="nomination" key={nomination.imdbID}>
-                    {nomination.Title}
-                    ({nomination.Year})                        
-                    <button onClick={() => removeNomination(nomination)}> Remove </button>
+                    <div className="nomination-title">
+                        {nomination.Title}
+                    </div>                  
+                    <div className="remove-nomination-container">
+                        <button
+                            className="remove-nomination-button"
+                            style={{ backgroundImage: "url(" + `${nomination.Poster}` + ")" }}
+                            onClick={() => removeNomination(nomination)}>
+                        </button>
+                    </div>
                 </li> 
             ))}
         </ul>

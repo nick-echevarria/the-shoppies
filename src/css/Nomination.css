@@ -1,6 +1,47 @@
 .nomination { 
-    color: black; 
+    height: 12vh; 
+    width: inherit; 
+    color: black;
     background-color: white;
-    border: 1px black solid;
-    z-index: 1; 
+    border-top: 1vh black solid;
+    border-right: 1vh black solid;
+    border-left: 1vh black solid;
+    border-bottom: .5vh black solid; 
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between; 
+}
+
+.nomination-title { 
+    height: inherit;
+    width: 70vw; 
+    font-size: 3vh; 
+    font-weight: 700; 
+    display: flex; 
+    align-items: center; 
+    padding: 4vh; 
+}
+
+.remove-nomination-container { 
+    height: 10vh; 
+    width: 30vw;   
+    display: flex; 
+    position: relative;
+    top: .2vh;
+    right: 1vh; 
+}
+
+.remove-nomination-button { 
+    height: 100%; 
+    width: 100%; 
+    background-position: center; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;  
+}
+
+.remove-nomination-button:hover { 
+    transform: scale(1.03);  
+    box-shadow: 0 0 2vh rgb(199, 159, 39);
+    border: 1px solid rgb(199, 159, 39);
 }
